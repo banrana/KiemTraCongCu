@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KiemTraCongCu
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -24,7 +24,16 @@ namespace KiemTraCongCu
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            if (txtUserName.Text == "admin" && txtPassword.Text == "admin")
+            {
+                FormSuccess mainForm = new FormSuccess();
+                mainForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng. Vui lòng thử lại!");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
